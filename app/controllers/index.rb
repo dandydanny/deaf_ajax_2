@@ -6,9 +6,9 @@ end
 
 post  '/grandma'  do
   if params[:user_input] == params[:user_input].upcase
-    gma_says = "What? Not since 1973! (Input is in all caps)"
+    gma_says = "#{params[:user_input]}? What? Not since 1973! (Input is in all caps)"
   else
-    gma_says = "Speak up! (Input is not in caps)"
+    gma_says = "#{params[:user_input]}? Speak up! (Input is not in caps)"
   end
 
   # redirect to("/?grandma=#{gma_says}")
