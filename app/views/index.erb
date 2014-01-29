@@ -1,0 +1,42 @@
+<div class="container">
+
+  <h1>Deaf Grandma</h1>
+  <h3>Now fortified with AJAX!</h3>
+  <p><em>Remember, Grandma is hard of hearing. You may have to YELL.</em></p>
+
+  <!-- Old code for grandma response. Not used
+  <% if @grandma %>
+      <p>Grandma says: "<span id="grandma_says"><%= @grandma %></span>"</p>
+  <% end %>
+  -->
+
+  <div style="background-color: #FFDDDD; float: left; width: 20%; padding: 5px; padding: 5px;">Grandma says:</div>
+  <!-- The following div gets replaced by server response -->
+  <div id="grandma_says" style="background-color: #F5BBBB; float: right; width: 75%; padding: 5px; padding: 5px;">&nbsp;
+  </div>
+
+
+  <!-- The following form gets the user input -->
+  <div style="clear: both;">
+    <form action="/grandma" method="post">
+      <br><hr>
+      <h3>Say something to Grandma:</h3>
+      <input type="text" id="ajaxinput" name="user_input">
+      <input type="submit" value="Say it!">
+    </form>
+
+    <!-- Timestamp indicating when the page is displayed to the user -->
+    <br><br>
+    <script language="javascript">
+    document.write("<i>Page last refreshed on: "+document.lastModified+"<I>");
+    </script>
+
+  </div>
+
+</div>
+
+
+<!-- Debug stuff below -->
+
+<!-- Focus and place the cursor in textbox -->
+<script>document.getElementById('ajaxinput').focus()</script>
